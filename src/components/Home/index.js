@@ -1,34 +1,37 @@
-// Write your code here
-import './index.css'
 import ThemeContext from '../../context/ThemeContext'
 
 import Navbar from '../Navbar'
 
-const homelight = 'https://assets.ccbp.in/frontend/react-js/home-light-img.png'
-
-const homedark = 'https://assets.ccbp.in/frontend/react-js/home-dark-img.png'
+import './index.css'
 
 const Home = () => (
   <ThemeContext.Consumer>
     {value => {
       const {isDarkTheme} = value
 
-      const hoemContaineris = isDarkTheme
-        ? 'hoemContainer darkis'
-        : 'hoemContainer lightis'
+      const homeBgClassName = isDarkTheme ? 'home-bg-dark' : 'home-bg-light'
 
-      const homelogois = isDarkTheme ? `${homedark}` : `${homelight}`
+      const homeImageURL = isDarkTheme
+        ? 'https://assets.ccbp.in/frontend/react-js/home-dark-img.png'
+        : 'https://assets.ccbp.in/frontend/react-js/home-light-img.png'
+
+      const homeTextClassName = isDarkTheme
+        ? 'home-text-light'
+        : 'home-text-dark'
 
       return (
-        <div className={hoemContaineris}>
+        <div className={`home-app-container ${homeBgClassName}`}>
           <Navbar />
-          <div className="homecontent">
-            <img src={homelogois} alt="home" className="homeImg" />
-            <h1 className="heading">Home</h1>
+          <div className="home-responsive-container">
+            <div className="home-container">
+              <img className="home-image" src={homeImageURL} alt="home" />
+              <h1 className={`home-heading ${homeTextClassName}`}>Home</h1>
+            </div>
           </div>
         </div>
       )
     }}
   </ThemeContext.Consumer>
 )
+
 export default Home

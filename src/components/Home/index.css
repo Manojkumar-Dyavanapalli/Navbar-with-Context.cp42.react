@@ -1,32 +1,51 @@
-/* Write your CSS here */
-.hoemContainer {
+.home-app-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  padding: 5px;
+  min-height: 100vh;
 }
-.homecontent {
+
+.home-bg-dark {
+  background-color: #000000;
+}
+
+.home-bg-light {
+  background-color: #ffffff;
+}
+
+.home-responsive-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-grow: 1;
+}
+
+.home-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  height: 100%;
 }
-.homeImg {
-  width: 80px;
+
+.home-image {
+  height: 124px;
 }
-.heading {
-  font-size: 30px;
+
+.home-heading {
   font-family: 'Roboto';
-  font-weight: bold;
+  font-size: 32px;
 }
-.lightis {
-  color: #000000;
-  background-color: #ffffff;
+
+@media screen and (min-width: 768px) {
+  .home-heading {
+    font-size: 48px;
+  }
 }
-.darkis {
+
+.home-text-light {
   color: #ffffff;
-  background-color: #000000;
+}
+
+.home-text-dark {
+  color: #1e293b;
 }
